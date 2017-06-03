@@ -1,1 +1,17 @@
-theme: jekyll-theme-hacker
+#YAML Configuration file
+target:
+  host: "192.168.1.1"
+  port: "4444"
+  username: "admin"
+  password: "pwd"
+
+server:
+  host: "192.168.1.16"
+  port: "4444"
+  username: "root"
+  password: "root"
+
+root:
+  password: toor
+  token: 827dcc4a-3897-4a0f-88b1-b2b6d26c9281
+  username: root
