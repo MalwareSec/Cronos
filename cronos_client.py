@@ -11,7 +11,7 @@ def client_sender(buffer):
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         client.connect((host,port))
-        print "Connected to server!"
+        print "Sent to server!"
         #STDN
         if len(buffer):
             client.send(buffer)

@@ -20,3 +20,5 @@ server_user = cfg["server"]["username"]
 server_pwd = cfg["server"]["password"]
 
 host_data = [host, server_port, server_user, server_pwd]
+
+data.close()
