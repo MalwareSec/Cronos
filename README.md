@@ -14,11 +14,15 @@ Accessing a computer system or network without authorization or explicit permiss
 Getting started:
 
 Run main.py to set up a new user or spin up the server
+
 python main.py
+
 ...follow instructions...
 
 Run stub.sh to create the stub executable (needs pyinstaller - pip install pyinstaller)
+
 bash stub.sh
+
 ...enter required settings...
 
 The stub is created in the dist directory
