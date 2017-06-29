@@ -1,9 +1,9 @@
 #Cronos Main
 from banner import banner
-from oauth import *
+from oauth import oauth
 from var import *
-
-oauth()
+from create_user import create
+from server import Main
 
 COMMANDS = ['help', 'client', 'clients', 'upload', 'shell', 'pwd', 'exit', 'kill', 'scan', 'ls',
             'system', 'wget', 'cat', 'crypt']
@@ -13,20 +13,23 @@ HELP = '''
     -clients            --Show all connected clients
     -u --upload         --Upload file, executable, payload etc.
     -shell              --Open shell and execute commands
-    -pwd                --Show the working directory
     -exit               --Exit the server and keep all clients alive
     -end                --Kill current connection
     -kill               --Kill all active connections
     -scan               --Scan the network
-    -ls                 --List all files in the current directory
     -system             --Show all current system information
     -wget               --Download file from web
-    -cat [FileName]     --Read file
-    -crypt              --Generate crypto key
+    -crypt              --Generate crypto token
     '''
 
 banner()
-print "[*] Spining up server on: " + host + " port: " + server_port + " [*]"
 #print target
 #print host
 print HELP
+q = raw_input("Sign in as existing user? [y/n] ")
+if q == "y" or q == "Y":
+    oauth()
+    Main()
+else:
+    create()
+    Main()

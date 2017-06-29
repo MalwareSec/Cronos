@@ -1,29 +1,28 @@
 import yaml
 import getpass
-import uuid
 import sys
+import uuid
 
-print "Welcome new user!"
-print "Please create your new account"
-print ""
-user_name = raw_input("Enter your username: ")
-pwd = getpass.getpass("Enter your password: ")
-pwd_confirmation = getpass.getpass("Please re-enter your password: ")
-if pwd == pwd_confirmation:
-    print "Passwords match up!"
-else:
-    print "Passwords did not match"
-    sys.exit()
-token = uuid.uuid4()
-key = str(token)
-print "This is your ID token: " + key + " Please save this in your local directory."
+def create():
+    print "Welcome new user!"
+    print "Please create your new account"
+    print ""
+    user_name = raw_input("Enter your username: ")
+    pwd = getpass.getpass("Enter your password: ")
+    pwd_confirmation = getpass.getpass("Please re-enter your password: ")
+    if pwd == pwd_confirmation:
+        print "Passwords match up!"
+    else:
+        print "Passwords did not match"
+        sys.exit()
+    srv = raw_input("Please enter the server IP: ")
+    port = raw_input("Please enter the listening port: ")
+    token = str(uuid.uuid4())
 
-#num = uuid.uuid4()
-#uid = str(num)
-new_user = {user_name:{'username':user_name, 'password':pwd, 'token':key}}
+    new_server = {"server":{'host':srv, 'port':port, 'username':user_name, 'password':pwd, 'token':token}}
 
+    with open("_config.yaml", "w") as config:
+        yaml.dump(new_server, config, default_flow_style = False)
 
-with open("_config.yaml", "a") as config:
-    yaml.dump(new_user, config, default_flow_style = False)
-
-print "User: " + user_name + " created succesfully!"
+    print "User: " + user_name + " created succesfully!"
+    print "Please store your token: " + token
