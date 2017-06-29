@@ -28,5 +28,7 @@ bash stub.sh
 The stub is created in the dist directory
 
 Working on adding a multithreaded socket server and better user interface for both server and client functions
+
 Also looking to improve the usability and functionality of the stub.py
+
 Working towards adding all the tools visible on the help page
