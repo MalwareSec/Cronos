@@ -2,6 +2,8 @@
 
 Cronos is a Remote Administration Tool written in Python.
 
+<img width="609" alt="screen shot 2017-06-28 at 9 41 12 pm" src="https://user-images.githubusercontent.com/16884900/27667726-d108d188-5c4a-11e7-9fab-e14984436e83.png">
+
 It was a fun project for research purposes only. Feel free to work this code into your own
 projects or change it in any way you see fit.
 
